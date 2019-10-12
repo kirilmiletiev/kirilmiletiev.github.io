@@ -1,0 +1,162 @@
+﻿@using YavlenaPlus.Data;
+@using YavlenaPlus.Data.Models;
+@inject YavlenaPlusContext ctx
+@inject YavlenaPlus.Web.Controllers.CommentsController _commentsController
+@model YavlenaPlus.Data.Models.Offer
+@{ Comment mainComment = new Comment();}
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Offer</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Size)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Size)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Floor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Floor)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TotalFloors)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TotalFloors)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.YearOfBuild)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.YearOfBuild)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ShortDescription)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ShortDescription)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PhoneOfOwner)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PhoneOfOwner)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Picture)
+        </dt>
+        <dd class="col-sm-10">
+            @*@Html.DisplayFor(model => model.Picture)*@
+            <img src="@Html.DisplayFor(model => model.Picture)" alt="Alternate Text" />
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IsNew)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IsNew)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IsActual)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IsActual)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+        <dd class="col-sm-6">
+            @Html.DisplayFor(model => model.Comments)
+            @*<button id="addComment">*@
+            <div id="addDivComment">
+                @{ //            <<------------ Must foreach comments with author, text and time of the  post
+
+
+
+                    var IsAnyCommentsForThisOffer = ctx.Comments.Any(x => x.OfferId == Model.Id);
+                    if (IsAnyCommentsForThisOffer)
+                    {
+                        <form asp-area="" asp-controller="Offers" asp-action="CreateComment" method="post">
+
+                            Текст на коментарът<br /> <input placeholder="Напиши своя коментар тук" autocomplete="on" style="width:500px; height:200px;  " asp-for="Comments.FirstOrDefault().Content" />
+                            @*Write your comment<br /> <input asp-for="@mainComment.Content" />*@
+                            <input type="hidden" value="@Model.Id" asp-for="Comments.FirstOrDefault().OfferId" />
+                            <button type="submit">Сподели нов коментар</button>
+                        </form>
+                        <table>
+                            @foreach (var comment in ctx.Comments.Where(x => x.OfferId == Model.Id))
+                            {
+                                var nameOfCommentator = ctx.Users.FirstOrDefault(x => x.Id == comment.YavlenaPlusUserId).UserName;
+                                <tr>
+                                    @*@foreach (var comment in ctx.Comments.Where(x => x.OfferId == Model.Id))
+                                        {*@
+                                    <td>
+                                        @comment.CommentTime <br />
+                                    </td>
+                                    <td>
+                                        @nameOfCommentator =>
+                                    </td>
+                                    <td>
+                                        @comment.Content;
+                                    </td>
+
+
+                                </tr>
+                            }
+                        </table>
+
+                    }
+                    else
+                    {
+                        <form asp-area="" asp-controller="Offers" asp-action="CreateComment" method="post">
+
+                            Write your comment<br /> <input asp-for="Comments.FirstOrDefault().Content" />
+                            @*Write your comment<br /> <input asp-for="@mainComment.Content" />*@
+                            <input type="hidden" value="@Model.Id" asp-for="Comments.FirstOrDefault().OfferId" />
+                            <button type="submit">Напиши първият коментар</button>
+                        </form>
+                    }
+
+                }
+            </div>
+            @*</button>*@
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+
+    }}

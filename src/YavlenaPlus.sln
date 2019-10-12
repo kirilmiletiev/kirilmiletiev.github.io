@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.452
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YavlenaPlus.Web", "Web\YavlenaPlus.Web\YavlenaPlus.Web.csproj", "{8B4D84DC-A552-45AF-9508-4A3B4D0509DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{2CB14AD5-C71E-4AB1-A571-7A90A7007815}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YavlenaPlus.Data.Models", "Data\YavlenaPlus.Data.Models\YavlenaPlus.Data.Models.csproj", "{181A22D3-C9F7-4E75-AFE0-B64AAD9AA155}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YavlenaPlus.Data", "Data\YavlenaPlus.Data\YavlenaPlus.Data.csproj", "{B4B9FE62-0172-4192-8BDA-A79F396ACFCA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{A163BDA5-FD41-4906-8260-515C985CA72F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YavlenaPlus.Services", "Services\YavlenaPlus.Services\YavlenaPlus.Services.csproj", "{27C7F4C9-726B-4EB6-9DF3-D93A85C16811}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YavlenaPlus.Seeder", "YavlenaPlus.Seeder\YavlenaPlus.Seeder.csproj", "{F4F059F2-641D-4620-94AB-5B5D7925030D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8B4D84DC-A552-45AF-9508-4A3B4D0509DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B4D84DC-A552-45AF-9508-4A3B4D0509DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B4D84DC-A552-45AF-9508-4A3B4D0509DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B4D84DC-A552-45AF-9508-4A3B4D0509DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{181A22D3-C9F7-4E75-AFE0-B64AAD9AA155}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{181A22D3-C9F7-4E75-AFE0-B64AAD9AA155}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{181A22D3-C9F7-4E75-AFE0-B64AAD9AA155}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{181A22D3-C9F7-4E75-AFE0-B64AAD9AA155}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4B9FE62-0172-4192-8BDA-A79F396ACFCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4B9FE62-0172-4192-8BDA-A79F396ACFCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4B9FE62-0172-4192-8BDA-A79F396ACFCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4B9FE62-0172-4192-8BDA-A79F396ACFCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27C7F4C9-726B-4EB6-9DF3-D93A85C16811}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27C7F4C9-726B-4EB6-9DF3-D93A85C16811}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27C7F4C9-726B-4EB6-9DF3-D93A85C16811}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27C7F4C9-726B-4EB6-9DF3-D93A85C16811}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4F059F2-641D-4620-94AB-5B5D7925030D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4F059F2-641D-4620-94AB-5B5D7925030D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4F059F2-641D-4620-94AB-5B5D7925030D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4F059F2-641D-4620-94AB-5B5D7925030D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{181A22D3-C9F7-4E75-AFE0-B64AAD9AA155} = {2CB14AD5-C71E-4AB1-A571-7A90A7007815}
+		{27C7F4C9-726B-4EB6-9DF3-D93A85C16811} = {A163BDA5-FD41-4906-8260-515C985CA72F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5A9AB536-A145-483C-9337-09DAE8B70584}
+	EndGlobalSection
+EndGlobal

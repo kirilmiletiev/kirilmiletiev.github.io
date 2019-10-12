@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AngleSharp" Version="0.12.1" />
+    <PackageReference Include="AngleSharp.Scripting.JavaScript" Version="0.5.1" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.12" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="4.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\YavlenaPlus.Data.Models\YavlenaPlus.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Data\YavlenaPlus.Data\YavlenaPlus.Data.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,4 +1,241 @@
-<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Кирил Милетиев</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        text-align: center;
+        overflow-x: hidden;
+        background: linear-gradient(45deg, #ff416c, #ff4b2b, #1e3c72, #2a5298);
+        background-size: 400% 400%;
+        animation: gradientBG 8s ease infinite;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      @keyframes gradientBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Навигация */
+      .topnav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 15px 20px;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        padding: 10px;
+        transition: 0.3s;
+      }
+
+      .nav-links a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 5px;
+      }
+
+      .glow {
+        background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b);
+        padding: 10px 15px;
+        color: white;
+        font-weight: bold;
+        border-radius: 20px;
+        transition: 0.3s;
+      }
+
+      .glow:hover {
+        transform: scale(1.1);
+      }
+
+      /* Хамбургер меню */
+      .hamburger {
+        display: none;
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+      }
+
+      /* Основно съдържание */
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        flex-grow: 1;
+      }
+
+      .page {
+        display: none;
+      }
+
+      .page.active {
+        display: block;
+      }
+
+      /* Responsive стилове */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          background-color: rgba(0, 0, 0, 0.9);
+          position: absolute;
+          top: 50px;
+          left: 0;
+          width: 100%;
+          padding: 10px;
+        }
+
+        .nav-links a {
+          text-align: center;
+          padding: 10px;
+          display: block;
+        }
+
+        .hamburger {
+          display: block;
+        }
+
+        .show {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav class="topnav">
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <div class="nav-links">
+          <a href="#" onclick="showPage('Home')">Home</a>
+          <a href="#" onclick="showPage('About')">About</a>
+          <a href="#" onclick="showPage('Contact')">Contact</a>
+          <a href="#" onclick="showPage('Tools')">Tools</a>
+          <a class="glow" href="#" onclick="showPage('Turbo')">Turbo</a>
+        </div>
+      </nav>
+    </header>
+
+    <div id="Home" class="container page active">
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <h1>Добре дошли в моя сайт!</h1>
+    </div>
+
+    <div id="About" class="container page">
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <h2>За нас</h2>
+    </div>
+
+    <div id="Contact" class="container page">
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <h3>Контакти</h3>
+    </div>
+
+    <div id="Tools" class="container page">
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <h4>Инструменти</h4>
+    </div>
+
+    <div id="Turbo" class="container page">
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <h4>Call me</h4>
+      <br />
+      <div>
+        <a
+          class="glow"
+          href="tel:+359893748997"
+          onclick="myFunc('Tools')"
+          style="font-size: larger"
+          >&#9742; 0893748997 &#9742;</a
+        >
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      &copy; 2025 Кирил Милетиев | Всички права запазени |
+      kirilmiletiev@gmail.com
+    </footer>
+    <script>
+      function showPage(pageId) {
+        document.querySelectorAll(".page").forEach((page) => {
+          page.classList.remove("active");
+        });
+        document.getElementById(pageId).classList.add("active");
+      }
+
+      function toggleMenu() {
+        document.querySelector(".nav-links").classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>
+
+
+
+
+
+<!-- <!DOCTYPE html>
 <title>Кирил Милетиев</title>
 <html lang="en" xml:lang="en">
 
@@ -6,8 +243,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
-    <!-- <link rel="stylesheet" href="styles.css"> -->
+ 
     <style>
         body {
             margin: 0;
@@ -166,4 +402,4 @@
 
 </body>
 
-</html>
+</html> -->
